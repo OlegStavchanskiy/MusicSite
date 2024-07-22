@@ -1,0 +1,52 @@
+.sphere {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+
+  transform-style: preserve-3d;
+  width: 420px;
+  height: 420px;
+
+}
+.sphere::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  background: #0f0;
+  box-shadow:
+  0 0 0 100px rgba(0, 255, 0,.1),
+  0 0 0 300px rgba(0, 255, 0,.1),
+  0 0 0 500px rgba(0, 255, 0,.1),
+  0 0 0 700px rgba(0, 255, 0,.1);
+  background-size: cover;
+  border-radius: 50%;
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0% {
+    box-shadow:
+    0 0 0 0 rgba(0, 255, 0, 0.1),
+    0 0 0 0 rgba(0, 255, 0, 0.1),
+    0 0 0 0 rgba(0, 255, 0, 0.1),
+    0 0 0 0 rgba(0, 255, 0, 0.1);
+  }
+
+  50% {
+    box-shadow:
+    0 0 0 400px rgba(0, 255, 0, 0.1),
+    0 0 0 600px rgba(0, 255, 0, 0.1),
+    0 0 0 800px rgba(0, 255, 0, 0.1),
+    0 0 0 1000px rgba(0, 255, 0, 0.1);
+  }
+
+  100% {
+    box-shadow:
+    0 0 0 800px rgba(0, 255, 0, 0.1),
+    0 0 0 1200px rgba(0, 255, 0, 0.1),
+    0 0 0 1600px rgba(0, 255, 0, 0.1),
+    0 0 0 2000px rgba(0, 255, 0, 0.1);
+  }
+}

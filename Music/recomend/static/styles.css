@@ -1,0 +1,239 @@
+    body {
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+scrollbar-width: none;
+}
+#suggestions-container {
+ position: relative; /* Устанавливаем позицию как относительную */
+  z-index: 1;
+  display: none;
+  background-color: #1f1f1f; /* Цвет фона контейнера */
+  padding: 10px; /* Внутренний отступ */
+  border: 2px solid #45b97b; /* Цвет и толщина границы */
+  border-radius: 10px; /* Скругление углов границы */
+  box-shadow:
+  0 0 20px rgba(126, 255, 102,1),
+  0 0 30px rgba(126, 255, 102,1),
+  0 0 40px rgba(126, 255, 102,1); /* Добавляем тень */
+  font-size: 16px;
+  text-color: #fff;
+
+}
+
+#search-input:focus + #suggestions-container {
+  display: block; /* Показываем контейнер при фокусе на поле ввода */
+
+}
+
+#search-input:not(:placeholder-shown) + #suggestions-container {
+  display: block; /* Показываем контейнер при наличии введенного текста */
+
+}
+#suggestions-container a {
+    padding: 8px;
+    text-shadow:
+    2px 0px 0px black,
+    0 0 10px rgba(255, 255, 255,1); /* Тень текста */
+    font-size: 16px;
+  color: #fff; /* Устанавливаем белый цвет текста для ссылок-подсказок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  display: flex;
+
+}
+
+#suggestions-container a:hover {
+  text-decoration: underline; /* Добавляем подчеркивание при наведении на ссылки-подсказки */
+}
+.nav-link {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+::-webkit-scrollbar {
+  display: none; /* скрыть полосу прокрутки для Chrome, Safari, и Opera */
+}
+header {
+  background-color: #1f1f1f;
+  padding: 17px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  height: 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+input[type="text"] {
+  width: 350px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+    z-index: 2;
+  position: relative;
+}
+
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.sphere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  content: '';
+  background: #1E90FF;
+  box-shadow:
+  0 0 100px rgba(30, 144, 255,1),
+  0 0 200px rgba(30, 144, 255,1),
+  0 0 300px rgba(30, 144, 255,1),
+  0 0 400px rgba(30, 144, 255,1),
+  0 0 500px rgba(30, 144, 255,1);
+  transition: 1s;
+  animation: animate 4s;
+}
+
+@keyframes animate
+{
+  0% {
+    transform: translateZ(300px) translateY(700px); /* начальное положение сферы внизу экрана */
+  }
+  100% {
+    transform: translateZ(300px) translateY(0); /* конечное положение сферы посередине экрана */
+  }
+}
+
+.sphere:hover {
+    box-shadow:
+  0 0 0 100px rgba(30, 144, 255,.1),
+  0 0 0 200px rgba(30, 144, 255,.1),
+  0 0 0 300px rgba(30, 144, 255,.1),
+  0 0 0 400px rgba(30, 144, 255,.1),
+  0 0 0 500px rgba(30, 144, 255,.1);
+
+}
+.content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+.music-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+    font-weight: bold;
+  font-size: 350%; /* увеличили размер шрифта */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* добавили тень */
+  z-index: 1;
+  transition: opacity 0.3s;
+    text-shadow: 2px 0px 0px black,
+  0 0 20px rgba(255, 255, 255,1);
+}
+
+.sphere:hover .music-text {
+  opacity: 0;
+}
+
+.sphere a.nav-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 170%;
+  text-decoration: none;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 0px 0px black,
+  0 0 20px rgba(255, 255, 255,1);
+
+}
+
+.sphere:hover a.nav-link {
+  opacity: 1;
+}
+ul {
+  display: flex;
+  position: absolute;
+
+  transform: translate(-50%,-50%);
+
+}
+
+ul li
+{
+  list-style: none;
+  margin: 0 15px;
+
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: #333;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .5s;
+}
+
+ul li a:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #7eff66;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+ul li a:hover:before
+
+{
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #7eff66;
+
+}
+
+ul li a:hover
+{
+color: #7eff66;
+box-shadow: 0 0 5px #7eff66;
+text-shadow: 0 0 5px #7eff66;
+}

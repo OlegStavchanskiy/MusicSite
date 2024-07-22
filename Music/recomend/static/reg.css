@@ -1,0 +1,169 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  margin: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul {
+  display: flex;
+  position: absolute;
+  top: 75%;
+  left: 49%;
+  transform: translate(-50%,-50%);
+
+}
+
+ul li
+{
+  list-style: none;
+  margin: 0 15px;
+
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background: #333;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .5s;
+}
+
+ul li a:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #7eff66;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+ul li a:hover:before
+
+{
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #7eff66;
+
+}
+
+ul li a:hover
+{
+color: #7eff66;
+box-shadow: 0 0 5px #7eff66;
+text-shadow: 0 0 5px #7eff66;
+}
+
+#auth_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:-200px;
+}
+
+.text-primary {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 0px 0px black, 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.registration {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 0px 0px black, 0 0 20px rgba(255, 255, 255, 1);
+  text-decoration: none;
+  margin-right: 35px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  padding: 5px;
+}
+.registration:hover {
+  background-color: rgba(77, 85, 92);
+}
+#na {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 25px;
+}
+
+#qwe {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
+}
+
+.profile-photo,
+.dropdown {
+  display: none;
+}
+
+.login {
+  display: none;
+}
+
+#qwe .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#qwe input[type="text"],
+#qwe input[type="email"],
+#qwe input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+#qwe button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  background-color: #1E90FF;
+  box-shadow:
+  0 0 20px rgba(30, 144, 255,0.5),
+  0 0 40px rgba(30, 144, 255,0.5);
+  transition: 1s;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 2px 0px 0px black, 0 0 20px rgba(255, 255, 255, 1);
+}
+
+#qwe button:hover {
+  background-color: #6eb5fa; /* изменение цвета при наведении */
+    box-shadow:
+  0 0 20px rgba(110, 181, 250,0.5),
+  0 0 40px rgba(110, 181, 250,0.5);
+}

@@ -1,0 +1,229 @@
+    body {
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+scrollbar-width: none;
+      font-family: Arial, sans-serif; /* Используемый шрифт для текста на странице */
+
+}
+#suggestions-container {
+ position: relative; /* Устанавливаем позицию как относительную */
+  z-index: 1;
+  display: none;
+  background-color: #1f1f1f; /* Цвет фона контейнера */
+  padding: 10px; /* Внутренний отступ */
+  border: 2px solid #45b97b; /* Цвет и толщина границы */
+  border-radius: 10px; /* Скругление углов границы */
+  box-shadow:
+  0 0 20px rgba(126, 255, 102,1),
+  0 0 30px rgba(126, 255, 102,1),
+  0 0 40px rgba(126, 255, 102,1); /* Добавляем тень */
+  font-size: 13px;
+  text-color: #fff;
+
+}
+
+#search-input:focus + #suggestions-container {
+  display: block; /* Показываем контейнер при фокусе на поле ввода */
+
+}
+
+#search-input:not(:placeholder-shown) + #suggestions-container {
+  display: block; /* Показываем контейнер при наличии введенного текста */
+
+}
+#suggestions-container a {
+    padding: 8px;
+    text-shadow:
+    2px 0px 0px black,
+    0 0 10px rgba(255, 255, 255,1); /* Тень текста */
+    font-size: 16px;
+  color: #fff; /* Устанавливаем белый цвет текста для ссылок-подсказок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  display: flex;
+
+}
+
+#suggestions-container a:hover {
+  text-decoration: underline; /* Добавляем подчеркивание при наведении на ссылки-подсказки */
+}
+.nav-link {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+::-webkit-scrollbar {
+  display: none; /* скрыть полосу прокрутки для Chrome, Safari, и Opera */
+}
+header {
+  background-color: #1f1f1f;
+  padding: 17px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  height: 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+input[type="text"] {
+  width: 350px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+    z-index: 2;
+  position: relative;
+}
+
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+    .profile-container {
+      border: 4px solid #1E90FF;
+      padding: 40px;
+      width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+box-shadow:
+  0 0 30px rgba(30, 144, 255,1),
+  0 0 40px rgba(30, 144, 255,1),
+  0 0 50px rgba(30, 144, 255,1);
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px; /* Добавляем отступ снизу для расстояния между блоками */
+    }
+    .profile-image {
+      margin-right: 30px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover; /* Устанавливаем, чтобы изображение полностью занимало свою область и обрезалось при необходимости */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем тень для изображения */
+      border: 4px solid #7eff66;
+      box-shadow:
+  0 0 20px rgba(126, 255, 102,1),
+  0 0 30px rgba(126, 255, 102,1),
+  0 0 40px rgba(126, 255, 102,1);
+    }
+  .details {
+    font-size: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between; /* Размещаем имя и фамилию по обе стороны блока */
+    padding: 10px; /* Добавляем внутренний отступ внутри рамки */
+    border-radius: 10px; /* Делаем скругленные углы для рамки */
+    margin-top: 20px; /* Добавляем отступ сверху для разделения блоков */
+    text-shadow: 2px 0px 0px black,
+    0 0 20px rgba(255, 255, 255,1);
+  }
+
+    .news-form {
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #45b97b;
+    }
+    form label {
+      display: block; /* Делаем метку блочным элементом для удобного отображения */
+      margin-bottom: 5px; /* Добавляем отступ между метками и полями ввода */
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #359f67;
+    }
+
+        .logout-button {
+      position: absolute; /* Позиционируем кнопку абсолютно внутри родительского контейнера */
+      top: 10px; /* Отступ от верхнего края */
+      right: 10px; /* Отступ от правого края */
+      padding: 10px 20px; /* Размер кнопки */
+      background-color: rgba(248, 64, 52, 0.82); /* Цвет фона кнопки */
+      color: #fff; /* Цвет текста кнопки */
+      border: none; /* Удаление границы */
+      border-radius: 5px; /* Скругление углов */
+      cursor: pointer; /* Изменение курсора при наведении */
+      font-weight: bold; /* Жирный шрифт */
+    }
+    .logout-button:hover {
+  background-color: #d32b27; /* Изменяем цвет фона при наведении */
+}
+
+
+
+
+ul {
+  display: flex;
+  position: absolute;
+
+  transform: translate(-50%,-50%);
+
+}
+
+ul li
+{
+  list-style: none;
+  margin: 0 15px;
+
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: #333;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .5s;
+}
+
+ul li a:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #7eff66;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+ul li a:hover:before
+
+{
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #7eff66;
+
+}
+
+ul li a:hover
+{
+color: #7eff66;
+box-shadow: 0 0 5px #7eff66;
+text-shadow: 0 0 5px #7eff66;
+}

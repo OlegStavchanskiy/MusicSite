@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div>
+        <div id=qwe class=" shadow-lg p-5">
+
+            <div class="text-center mb-4" id="auth_text">
+                <h3 class="text-success">Авторизация</h3>
+            </div>
+            <div class="p-4">
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <form action="{% url 'login' %}" method="post">
+
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-success"><i class="bi bi-person-plus-fill text-"></i></span>
+                            <input type="text" class="form-control" name="username" placeholder="Логин">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-success"><i class="bi bi-key-fill text-white"></i></span>
+                            <input type="password" class="form-control" name="password" placeholder="Пароль">
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-success" type="submit">Войти</button>
+                    </div>
+                        <p class="text-center mt-3" id="na">Нет аккаунта?
+                            <a class="registration" href="/register">Регистрация</a>
+                        </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<ul>
+    <li><a href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+</ul>
+</body>
+</html>
+
